@@ -28,7 +28,7 @@ function App() {
           <BrowserRouter>
 
           <NavBar/>
-          <div className="spacer" > &nbsp; </div>
+          <div className="spacer"> &nbsp; </div>
 
           <Switch>
             <Route exact path="/Landing"     render={(props) => <Landing {...props} />} />

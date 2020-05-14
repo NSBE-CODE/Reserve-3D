@@ -7,7 +7,7 @@ const Footer = (props) => {
 
     return (
         <div className = "footer" >
-            <h1> FOOTER </h1>
+            <h2> Footer </h2>
         </div>
     )
 };
