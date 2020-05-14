@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import UF_Logo from './uf-logo.png';
 import Profile_Icon from './profile-icon.png';
 
@@ -16,13 +17,11 @@ const NavBar = (props) => {
         setGallBg("#FFFFFF");
         setAboutBg("#FFFFFF");
     };
-
     const selectGallery = () => {
         setResBg("#FFFFFF");
         setGallBg("#DDE2E8");
         setAboutBg("#FFFFFF");
     };
-
     const selectAbout = () => {
         setResBg("#FFFFFF");
         setGallBg("#FFFFFF");
@@ -38,7 +37,19 @@ const NavBar = (props) => {
             <a id="title" target="_blank" rel="noopener noreferrer"href="https://www.eng.ufl.edu/"> Department of Engineering Education</a>
 
             {/* Profile Icon */}
-            <img id="icon" src={Profile_Icon}/>
+            <div className="dropdown">
+                <img id="icon" src={Profile_Icon}/>
+                <div className="dropdown-content">
+                    <Link to='/UserInfo'> User Info </Link>
+                    <Link to='/LabHistory'> Lab History </Link>
+                    <Link to='/EditPersonnel'> Edit Personnel </Link>
+                    <Link to='/ManagePrinters'> Manage Printers </Link>
+                    <Link to='/DisiplinaryActions'> Disiplinary Actions </Link>
+                    <Link to='/ConfigureLabHours'> Configure Lab Hours </Link>
+                    <Link to='/EditGallery'> Edit Gallery </Link>
+                    <Link> Sign Out </Link>
+                </div>
+            </div>
 
             {/* Bar */}
             <div id="bar"> &nbsp; </div>

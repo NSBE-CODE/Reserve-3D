@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+
 import './App.css';
 
 import NavBar from './scenes/NavBar/navBar.js';
@@ -10,18 +11,24 @@ import Gallery from './scenes/Gallery/gallery.js';
 import About from './scenes/About/about.js';
 import NotFound from './scenes/notFound.js';
 
-import UserInfo from './scenes/Profile/userInfo.js';
-import LabHistory from './scenes/Profile/labHistory.js';
-import EditPersonnel from './scenes/Profile/editPersonnel.js';
-import ManagePrinters from './scenes/Profile/managePrinters.js';
-import DisiplinaryActions from './scenes/Profile/disiplinaryActions.js';
-import ConfigureLabHours from './scenes/Profile/configureLabHours.js';
-import EditGallery from './scenes/Profile/editGallery.js';
+import UserInfo from './scenes/Profile/UserInfo/userInfo.js';
+import LabHistory from './scenes/Profile/LabHistory/labHistory.js';
+import EditPersonnel from './scenes/Profile/EditPersonnel/editPersonnel.js';
+import ManagePrinters from './scenes/Profile/ManagePrinters/managePrinters.js';
+import DisiplinaryActions from './scenes/Profile/DisiplinaryActions/disiplinaryActions.js';
+import ConfigureLabHours from './scenes/Profile/ConfigureLabHours/configureLabHours.js';
+import EditGallery from './scenes/Profile/EditGallery/editGallery.js';
 
 import Footer from './scenes/Footer/footer.js';
 
 
 function App() {
+  const options = [
+    { key: 1, text: 'Choice 1', value: 1 },
+    { key: 2, text: 'Choice 2', value: 2 },
+    { key: 3, text: 'Choice 3', value: 3 },
+  ]
+
   return (
     <div className="App"> 
         <div className="content">
@@ -50,6 +57,7 @@ function App() {
 
           </BrowserRouter>
         </div>
+
         <Footer />
     </div>
   );
