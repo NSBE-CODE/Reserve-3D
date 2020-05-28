@@ -3,23 +3,22 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import './App.css';
 
-import NavBar from './scenes/NavBar/navBar.js';
+import NavBar from './components/all/NavBar.js';
+import NotFound from './components/all/NotFound.js';
+import Footer from './components/all/Footer.js';
 
-import Landing from './scenes/Landing/landing.js';
-import Reservation from './scenes/Reservation/reservation.js';
-import Gallery from './scenes/Gallery/gallery.js';
-import About from './scenes/About/about.js';
-import NotFound from './scenes/notFound.js';
+import Landing from './pages/Landing.js';
+import Gallery from './pages/Gallery.js';
+import About from './pages/About.js';
 
-import UserInfo from './scenes/Profile/UserInfo/userInfo.js';
-import LabHistory from './scenes/Profile/LabHistory/labHistory.js';
-import EditPersonnel from './scenes/Profile/EditPersonnel/editPersonnel.js';
-import ManagePrinters from './scenes/Profile/ManagePrinters/managePrinters.js';
-import DisiplinaryActions from './scenes/Profile/DisiplinaryActions/disiplinaryActions.js';
-import ConfigureLabHours from './scenes/Profile/ConfigureLabHours/configureLabHours.js';
-import EditGallery from './scenes/Profile/EditGallery/editGallery.js';
+import ProfileInfo from './pages/profilePgs/ProfileInfo.js';
+import LabHistory from './pages/profilePgs/LabHistory.js';
+import EditPersonnel from './pages/profilePgs/EditPersonnel.js';
+import ManagePrinters from './pages/profilePgs/ManagePrinters.js';
+import DisciplinaryActions from './pages/profilePgs/DiscipActions.js';
+import ConfigureLabHours from './pages/profilePgs/ConfigLabHours.js';
+import EditGallery from './pages/profilePgs/EditGallery.js';
 
-import Footer from './scenes/Footer/footer.js';
 
 
 function App() {
@@ -39,14 +38,13 @@ function App() {
 
           <Switch>
             <Route exact path="/Landing"     render={(props) => <Landing {...props} />} />
-            <Route exact path="/Reservation" render={(props) => <Reservation {...props} />} />
             <Route exact path="/Gallery"    render={(props) => <Gallery {...props} />} />
             <Route path="/About"          render={(props) => <About {...props} />} />
-            <Route path="/UserInfo"     render={(props) => <UserInfo {...props} />} />
+            <Route path="/ProfileInfo"     render={(props) => <ProfileInfo {...props} />} />
             <Route exact path="/LabHistory" render={(props) => <LabHistory {...props} />} />
             <Route exact path="/EditPersonnel" render={(props) => <EditPersonnel {...props} />} />
             <Route exact path="/ManagePrinters"   render={(props) => <ManagePrinters {...props} />} />
-            <Route exact path="/DisiplinaryActions"   render={(props) => <DisiplinaryActions {...props} />} />
+            <Route exact path="/DisciplinaryActions"   render={(props) => <DisciplinaryActions {...props} />} />
             <Route exact path="/ConfigureLabHours"  render={(props) => <ConfigureLabHours {...props} />} />
             <Route exact path="/EditGallery"  render={(props) => <EditGallery {...props} />} />
             <Route exact path="/">
