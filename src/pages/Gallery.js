@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import './gallery.css';
+import '../styles/gallery/gallery.css';
 
 
 const Gallery = (props) => {

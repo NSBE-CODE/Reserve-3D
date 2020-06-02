@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import './reservation.css';
+import '../../styles/landing/landing.css';
 
 
 const Reservation = (props) => {

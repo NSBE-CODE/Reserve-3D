@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import './footer.css';
+import '../../styles/all/footer.css';
 
 
 const Footer = (props) => {

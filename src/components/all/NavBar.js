@@ -1,16 +1,26 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import UF_Logo from './uf-logo.png';
-import Profile_Icon from './profile-icon.png';
+import UF_Logo from '../../assets/all/uf-logo.png';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-import './navBar.css';
+import '../../styles/all/navBar.css';
 
 
 const NavBar = (props) => {
     const [resBg, setResBg] = useState("#DDE2E8");
     const [gallBg, setGallBg] = useState("#FFFFFF");
     const [aboutBg, setAboutBg] = useState("#FFFFFF");
+    const [open, setOpen] = useState(true);
+    const [dropDownDisplay, setDropDownDisplay] = useState("none");
+
+    const toggleDropDown = () => {
+        setOpen(!open);
+        console.log(open);
+        if(open) setDropDownDisplay("block");
+        else setDropDownDisplay("none");
+    }
 
     const selectReservation = () => {
         setResBg("#DDE2E8");
@@ -31,23 +41,31 @@ const NavBar = (props) => {
     return (
         <div className="header" >
             {/* UF Logo */}
-            <Link to='/Landing'> <img id="logo" src={UF_Logo}/> </Link>
+            <Link to='/Landing'> <img id="logo" alt="UF Logo" src={UF_Logo}/> </Link>
 
             {/* Department Title */}
-            <a id="title" target="_blank" rel="noopener noreferrer"href="https://www.eng.ufl.edu/"> Department of Engineering Education</a>
+            <a id="title" target="_blank" rel="noopener noreferrer" href="https://www.eng.ufl.edu/"> Department of Engineering Education</a>
 
-            {/* Profile Icon */}
-            <div className="dropdown">
-                <img id="icon" src={Profile_Icon}/>
-                <div className="dropdown-content">
-                    <Link to='/UserInfo'> User Info </Link>
-                    <Link to='/LabHistory'> Lab History </Link>
-                    <Link to='/EditPersonnel'> Edit Personnel </Link>
-                    <Link to='/ManagePrinters'> Manage Printers </Link>
-                    <Link to='/DisiplinaryActions'> Disiplinary Actions </Link>
-                    <Link to='/ConfigureLabHours'> Configure Lab Hours </Link>
-                    <Link to='/EditGallery'> Edit Gallery </Link>
-                    <Link> Sign Out </Link>
+            {/* Drop Down Menu */}
+            <div className="drop-down-menu__container">
+                <AccountCircleIcon id="profile-icon" onClick={toggleDropDown}/>
+                <ExpandMoreIcon id="expand-more-icon"/>
+                <div className="drop-down-menu"  style={{display:dropDownDisplay}}>
+                    <div id="item-profile">
+                        <div id="profile-picture">&nbsp;</div>
+                        <a id="item-profile__inner" href='/UserInfo'>
+                            <div>Hello cosimawest,</div>
+                            <div style={{fontSize: "10px"}}>view profile</div>
+                        </a>
+                    </div>
+                    <hr/>
+                    <a href='/LabHistory' id="item"> Lab History </a>
+                    <a href='/EditPersonnel' id="item"> Edit Personnel </a>
+                    <a href='/ManagePrinters' id="item"> Manage Printers </a>
+                    <a href='/DisiplinaryActions' id="item"> Disiplinary Actions </a>
+                    <a href='/ConfigureLabHours' id="item"> Configure Lab Hours </a>
+                    <a href='/EditGallery' id="item"> Edit Gallery </a>
+                    <a href='#'  id="item-sign-out"> Sign Out </a>
                 </div>
             </div>
 
@@ -56,7 +74,7 @@ const NavBar = (props) => {
 
             {/* Page Links */}
             <div id = "list">
-                <Link className="nav-link" to='/Reservation' 
+                <Link className="nav-link" to='/Landing' 
                     onClick={selectReservation} 
                     style={{backgroundColor:resBg}}> 
                     Reservation</Link>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import './App.css';
@@ -11,7 +11,7 @@ import Landing from './pages/Landing.js';
 import Gallery from './pages/Gallery.js';
 import About from './pages/About.js';
 
-import ProfileInfo from './pages/profilePgs/ProfileInfo.js';
+import AdminProfileView from './pages/profilePgs/AdminProfileView.js';
 import LabHistory from './pages/profilePgs/LabHistory.js';
 import EditPersonnel from './pages/profilePgs/EditPersonnel.js';
 import ManagePrinters from './pages/profilePgs/ManagePrinters.js';
@@ -22,11 +22,6 @@ import EditGallery from './pages/profilePgs/EditGallery.js';
 
 
 function App() {
-  const options = [
-    { key: 1, text: 'Choice 1', value: 1 },
-    { key: 2, text: 'Choice 2', value: 2 },
-    { key: 3, text: 'Choice 3', value: 3 },
-  ]
 
   return (
     <div className="App"> 
@@ -40,7 +35,7 @@ function App() {
             <Route exact path="/Landing"     render={(props) => <Landing {...props} />} />
             <Route exact path="/Gallery"    render={(props) => <Gallery {...props} />} />
             <Route path="/About"          render={(props) => <About {...props} />} />
-            <Route path="/ProfileInfo"     render={(props) => <ProfileInfo {...props} />} />
+            <Route path="/ProfileInfo"     render={(props) => <AdminProfileView {...props} />} />
             <Route exact path="/LabHistory" render={(props) => <LabHistory {...props} />} />
             <Route exact path="/EditPersonnel" render={(props) => <EditPersonnel {...props} />} />
             <Route exact path="/ManagePrinters"   render={(props) => <ManagePrinters {...props} />} />
