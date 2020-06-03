@@ -1,15 +1,15 @@
 import React from 'react';
 
-import './reservation.css';
+import '../../styles/profiles/studentProfileView.css';
 
 
-const Reservation = (props) => {
+const StudentProfile = (props) => {
 
     return (
-        <div className = "reservation" >
-            <h1> THIS IS THE RESERVATION PAGE </h1>
+        <div className = "student-profile" >
+            <h1> THIS IS THE STUDENT PROFILE PAGE </h1>
         </div>
     )
 };
 
-export default Reservation;
+export default StudentProfile;

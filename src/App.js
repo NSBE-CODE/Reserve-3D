@@ -15,10 +15,9 @@ import AdminProfileView from './pages/profilePgs/AdminProfileView.js';
 import LabHistory from './pages/profilePgs/LabHistory.js';
 import EditPersonnel from './pages/profilePgs/EditPersonnel.js';
 import ManagePrinters from './pages/profilePgs/ManagePrinters.js';
-import DisciplinaryActions from './pages/profilePgs/DiscipActions.js';
+import DiscipActions from './pages/profilePgs/DiscipActions.js';
 import ConfigureLabHours from './pages/profilePgs/ConfigLabHours.js';
 import EditGallery from './pages/profilePgs/EditGallery.js';
-
 
 
 function App() {
@@ -35,11 +34,11 @@ function App() {
             <Route exact path="/Landing"     render={(props) => <Landing {...props} />} />
             <Route exact path="/Gallery"    render={(props) => <Gallery {...props} />} />
             <Route path="/About"          render={(props) => <About {...props} />} />
-            <Route path="/ProfileInfo"     render={(props) => <AdminProfileView {...props} />} />
+            <Route path="/Profile"     render={(props) => <AdminProfileView {...props} />} />
             <Route exact path="/LabHistory" render={(props) => <LabHistory {...props} />} />
             <Route exact path="/EditPersonnel" render={(props) => <EditPersonnel {...props} />} />
             <Route exact path="/ManagePrinters"   render={(props) => <ManagePrinters {...props} />} />
-            <Route exact path="/DisciplinaryActions"   render={(props) => <DisciplinaryActions {...props} />} />
+            <Route exact path="/DiscipActions"   render={(props) => <DiscipActions {...props} />} />
             <Route exact path="/ConfigureLabHours"  render={(props) => <ConfigureLabHours {...props} />} />
             <Route exact path="/EditGallery"  render={(props) => <EditGallery {...props} />} />
             <Route exact path="/">

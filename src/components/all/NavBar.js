@@ -53,7 +53,7 @@ const NavBar = (props) => {
                 <div className="drop-down-menu"  style={{display:dropDownDisplay}}>
                     <div id="item-profile">
                         <div id="profile-picture">&nbsp;</div>
-                        <a id="item-profile__inner" href='/UserInfo'>
+                        <a id="item-profile__inner" href='/Profile'>
                             <div>Hello cosimawest,</div>
                             <div style={{fontSize: "10px"}}>view profile</div>
                         </a>
@@ -62,7 +62,7 @@ const NavBar = (props) => {
                     <a href='/LabHistory' id="item"> Lab History </a>
                     <a href='/EditPersonnel' id="item"> Edit Personnel </a>
                     <a href='/ManagePrinters' id="item"> Manage Printers </a>
-                    <a href='/DisiplinaryActions' id="item"> Disiplinary Actions </a>
+                    <a href='/DiscipActions' id="item"> Disiplinary Actions </a>
                     <a href='/ConfigureLabHours' id="item"> Configure Lab Hours </a>
                     <a href='/EditGallery' id="item"> Edit Gallery </a>
                     <a href='#'  id="item-sign-out"> Sign Out </a>
