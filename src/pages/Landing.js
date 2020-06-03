@@ -10,14 +10,14 @@ const Landing = (props) => {
             <div className="reservation-form-container">
                 <form>
                     <h3>Choose a Date</h3>
-                    <input id="field" type="date" placeholder="Date MM/DD/YYYY"></input>
-                    <input id="field" type="number" placeholder="Est. Required Time HH:MM"></input>
-                    <select id="field" placeholder="jdisoafh">
+                    <input id="field" type="date" placeholder="Date MM/DD/YYYY" autocomplete="off"></input>
+                    <input id="field" type="number" placeholder="Est. Required Time HH:MM" autocomplete="off"></input>
+                    <select id="field">
                         <option>Select Printer Size</option>
                         <option value="medium">Medium</option>
                         <option value="large">Large</option>
                     </select>
-                    <input id="field" type="text" placeholder="Comments..."></input>
+                    <textarea id="field__text-area" type="text" placeholder="Comments..." autocomplete="off"></textarea>
 
                     <button type="submit">Search</button>
                 </form>

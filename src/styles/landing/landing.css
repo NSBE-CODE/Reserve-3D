@@ -1,6 +1,8 @@
-.landing {
-    display: grid;
-    grid-template-columns: 30% 70%;
+@media (min-width: 960px) {
+    .landing {
+        display: grid;
+        grid-template-columns: 30% 70%;
+    }
 }
 
 /* ====== COLUMN 1, RESERVATION FORM ===== */
@@ -22,6 +24,16 @@
     margin-bottom: 12px;
 }
 
+.reservation-form-container #field__text-area {
+    font-family: Quando;
+    width: 85%;
+    height: 190px;
+    border: none;
+    background-color: #F1F1F1;
+    font-size: 18px;
+    margin-bottom: 12px;
+    resize: vertical;
+}
 
 .reservation-form-container button {
     font-family: Quando;
