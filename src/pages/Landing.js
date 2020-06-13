@@ -18,8 +18,9 @@ const Landing = (props) => {
                         <option value="large">Large</option>
                     </select>
                     <textarea id="field__text-area" type="text" placeholder="Comments..." autocomplete="off"></textarea>
+                    <button className="confirm-reservation__button">Confirm Reservation</button>
 
-                    <button type="submit">Search</button>
+                    <button className="search-times__button" type="submit">Search Times</button>
                 </form>
             </div>
 
