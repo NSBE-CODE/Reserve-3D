@@ -74,9 +74,8 @@ LabHoursSchema.statics = {
         });
     },
     //DELETE
-    post: function(req,res) {
-        var labHour = req.body;
-        this.create(labHour)
+    delete: function(req,res) {
+        this.deleteOne({Date: req.body.Date})
         .then((labHour)=>{
             res.json(labHour);
         })
@@ -84,6 +83,20 @@ LabHoursSchema.statics = {
             console.log('Error occured: ' + err);  
         });
     },
+    //PUT
+    put: function(req,res) {
+        this.findOneAndUpdate({
+            Date: req.body.Date
+        },
+        )
+        .exec()
+        .then((labHour)=>{
+            res.json(labHour);
+        })
+        .catch((err)=>{
+            console.log('Error occured: ' + err);  
+        });
+    }, 
 };
 
 
