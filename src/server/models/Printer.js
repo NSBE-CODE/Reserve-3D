@@ -43,8 +43,8 @@ PrinterSchema.statics = {
 
   //PUT
   put: function(req, res) {
-    this.findOneAndUpdate({
-      Name: req.body.Name
+    this.findById({
+      _id: req.params.id
     },
   )
   .exec().then((printer) =>{
