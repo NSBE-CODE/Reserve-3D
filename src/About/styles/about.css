@@ -1,0 +1,255 @@
+.about {
+    text-align: left;
+    height: 100%;
+    color: #082946;
+}
+
+button {
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    font-family: Quando;
+    font-size: 18px;
+    background-color: #E0812E;
+    color: white;
+}
+
+button::-moz-focus-inner {
+    border: 0;
+ }
+
+/* ===== HEADER ===== */
+
+@media (min-width: 960px) {
+    .about-header {
+        display: grid;
+        grid-template-columns: 35% 65%;
+    }
+    
+    .about-description #p-container {
+        min-height: 185px;
+    }
+}
+
+.about-description {
+    padding: 5% 10%;
+    background-color: #EFEFEF;
+    text-align: left;
+}
+
+.about-feature-image-container {
+    width: 100%;
+    background-image: url('../../assets/about/about-feature-image.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+}
+
+.about-description h1 {
+    margin: 0px;
+    font-size: 48px;
+}
+
+.about-description p {
+    font-family: calibri;
+    padding-bottom: 20px;
+}
+
+.about-description #button {
+    padding: 13px 23px;
+    border-radius: 4px;
+    transition: background-color 300ms ease-in-out;
+}
+
+.about-description #button:hover{
+    background-color: #FFC694;
+}
+
+/* ===== PROFESSOR CONTACT INFORMATION ===== */
+
+.contact-information {
+    padding: 30px 6%;
+}
+
+.contact-information #title {
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.professor-information-container {
+    display: grid;
+    grid-template-columns: 10vw 50vw auto;
+    column-gap: 15px;
+}
+
+.professor-information__profile-icon {
+    background-image: url('../../assets/about/profile-icon.jpg');
+    background-size: cover;
+    height: 10vw;
+    border-radius: 50%;
+}
+
+.peer-mentor-information-container {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 10vw 50vw auto;
+    column-gap: 15px;
+}
+
+.peer-mentor-information__profile-icon {
+    background-image: url('../../assets/about/ta-icon.jpg');
+    background-size: cover;
+    background-color: #DDE2E8;
+    margin-left: 3vw;
+    height: 7vw;
+    border-radius: 50%;
+}
+
+.information__contact {
+    background-color: #DDE2E8;
+    padding: 15px 30px;
+}
+
+.information__contact h2 {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.information__contact h3 {
+    float: right;
+    margin-top: 5px;
+
+}
+
+.information__contact #about {
+    font-family: Calibri;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.information__contact p {
+    font-size: 14px;
+}
+
+.information__contact #email {
+    color: #00529B;
+}
+
+.information__office-hours {
+    background-color: #DDE2E8;
+    padding: 15px 30px;
+}
+
+.information__office-hours #title {
+    font-size: 24px;
+}
+
+.section-break {
+    width: 100%;
+    height: 30px;
+}
+
+/* ===== FAQ ===== */
+
+.faq {
+    padding: 30px 6%;
+    padding-top: 0;
+}
+
+.faq-header {
+    display: grid;
+    grid-template-columns: auto 15%;
+    text-align: center;
+    color: white;
+}
+
+.faq-header #title {
+    font-size: 36px;
+    margin: 20px 0;
+    padding: 15px 10px;
+    background-color: #E0812E;
+}
+
+.faq-header #new-button {
+    font-size: 24px;
+    border-style: solid !important; 
+    margin: 20px 0;
+    background: none;
+    border: 2px;
+    border-color: #E0812E;
+    border-width: 3px;
+    margin-left: 10px;
+    color: #E0812E;
+    transition: border-width 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: font-size 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-header #new-button:hover {
+    border-width: 4px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.faq-question-container {
+    cursor: default;
+    display: grid;
+    grid-template-columns: 40px auto auto;
+    position: relative;
+    text-align: left;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #DDE2E8;
+    color: #000000;
+    margin-top: 15px;
+}
+
+.faq-question {
+    margin: auto 0;
+    padding-right: 15px;
+}
+
+.faq-answer {
+    font-family: Calibri;
+    position: relative;
+    text-align: left;
+    padding: 20px 30px;
+    padding-top: 0;
+    font-size: 18px;
+    background-color: #DDE2E8;
+    color: #000000;
+}
+
+.collapse {
+    transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-icon {
+    width: 1em;
+    height: 1em;
+    transition: transform 300ms;
+    transition-timing-function: cubic-bezier(0, 1, 0, 1);
+}
+
+.faq-icon--expanded {
+    color: #E0812E;
+    transform: rotateZ(-179.99deg);
+}
+
+.rotate90 {
+    transform: rotateZ(90deg);
+    top: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+  }
+
+  .faq-edit-button {
+      margin-left: auto;
+      margin-top: auto;
+      margin-bottom: auto;
+      background-color: #FFFFFF;
+      color: #000000;
+      width: 80px;
+      padding: 5px 15px;
+  }
