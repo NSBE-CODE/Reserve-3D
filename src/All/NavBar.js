@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import UF_Logo from '../../assets/all/uf-logo.png';
+import UF_Logo from '../assets/uf-logo.png';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-import '../../styles/all/navBar.css';
+import './navBar.css';
 
 
 const NavBar = (props) => {

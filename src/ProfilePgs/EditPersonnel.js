@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../styles/profiles/editPersonnel.css';
+import './styles/editPersonnel.css';
 
 
 const EditPersonnel = (props) => {
