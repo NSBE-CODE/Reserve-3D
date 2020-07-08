@@ -1,8 +1,8 @@
 import React from 'react';
 
-import '../../styles/all/footer.css';
+import './footer.css';
 
-import UF_Signature from '../../assets/landing/UF_Signature-white-800.png';
+import UF_Signature from '../assets/UF_Signature-white-800.png';
 
 
 

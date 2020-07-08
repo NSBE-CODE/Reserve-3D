@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../styles/profiles/configLabHours.css';
+import './styles/configLabHours.css';
 
 
 const ConfigLabHours = (props) => {

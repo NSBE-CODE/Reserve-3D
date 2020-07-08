@@ -3,21 +3,21 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import './App.css';
 
-import NavBar from './components/all/NavBar.js';
-import NotFound from './components/all/NotFound.js';
-import Footer from './components/all/Footer.js';
+import NavBar from './All/NavBar.js';
+import NotFound from './All/NotFound.js';
+import Footer from './All/Footer.js';
 
-import Landing from './pages/Landing.js';
-import Gallery from './pages/Gallery.js';
-import About from './pages/About.js';
+import Landing from './Landing/Landing.js';
+import Gallery from './Gallery/Gallery.js';
+import About from './About/About.js';
 
-import AdminProfileView from './pages/profilePgs/AdminProfileView.js';
-import LabHistory from './pages/profilePgs/LabHistory.js';
-import EditPersonnel from './pages/profilePgs/EditPersonnel.js';
-import ManagePrinters from './pages/profilePgs/ManagePrinters.js';
-import DiscipActions from './pages/profilePgs/DiscipActions.js';
-import ConfigureLabHours from './pages/profilePgs/ConfigLabHours.js';
-import EditGallery from './pages/profilePgs/EditGallery.js';
+import AdminProfileView from './ProfilePgs/AdminProfileView.js';
+import LabHistory from './ProfilePgs/LabHistory.js';
+import EditPersonnel from './ProfilePgs/EditPersonnel.js';
+import ManagePrinters from './ProfilePgs/ManagePrinters.js';
+import DiscipActions from './ProfilePgs/DiscipActions.js';
+import ConfigureLabHours from './ProfilePgs/ConfigLabHours.js';
+import EditGallery from './ProfilePgs/EditGallery.js';
 
 
 function App() {

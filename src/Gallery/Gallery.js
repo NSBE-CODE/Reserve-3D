@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../styles/gallery/gallery.css';
+import './styles/gallery.css';
 
 
 const Gallery = (props) => {

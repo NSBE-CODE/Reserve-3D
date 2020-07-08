@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import cx from "classnames";
 import Collapse from "@kunukn/react-collapse";
 
-import '../styles/about/about.css';
-import FeatureImage from '../assets/about/about-feature-image.jpg'
+import './styles/about.css';
+import FeatureImage from '../assets/about-feature-image.jpg'
 
 // icons
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';

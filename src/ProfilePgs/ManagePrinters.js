@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../styles/profiles/managePrinters.css';
+import './styles/managePrinters.css';
 
 
 const ManagePrinters = (props) => {
