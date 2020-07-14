@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../styles/profiles/studentProfileView.css';
+import './styles/studentProfileView.css';
 
 
 const StudentProfile = (props) => {
