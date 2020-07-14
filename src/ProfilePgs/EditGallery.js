@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './styles/editGallery.css';
+import './styles/profilePgs.css';
 
 
 const EditGallery = (props) => {

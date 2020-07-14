@@ -19,6 +19,8 @@ import DiscipActions from './ProfilePgs/DiscipActions.js';
 import ConfigureLabHours from './ProfilePgs/ConfigLabHours.js';
 import EditGallery from './ProfilePgs/EditGallery.js';
 
+import StudentProfileView from './ProfilePgs/StudentProfileView.js';
+
 
 function App() {
 
@@ -34,7 +36,7 @@ function App() {
             <Route exact path="/Landing"     render={(props) => <Landing {...props} />} />
             <Route exact path="/Gallery"    render={(props) => <Gallery {...props} />} />
             <Route path="/About"          render={(props) => <About {...props} />} />
-            <Route path="/Profile"     render={(props) => <AdminProfileView {...props} />} />
+            <Route path="/Profile"     render={(props) => <StudentProfileView {...props} />} />
             <Route exact path="/LabHistory" render={(props) => <LabHistory {...props} />} />
             <Route exact path="/EditPersonnel" render={(props) => <EditPersonnel {...props} />} />
             <Route exact path="/ManagePrinters"   render={(props) => <ManagePrinters {...props} />} />

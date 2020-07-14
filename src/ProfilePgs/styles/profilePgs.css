@@ -1,0 +1,39 @@
+.student-profile {
+    background-color: #F1F1F1;
+    overflow: auto;
+}
+
+@media (min-width: 700px) {
+    .top-section {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        background-color: #FFFFFF;
+        margin: 2em 5%;
+    }
+}
+
+
+
+.profile-icon-container {
+    margin: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-icon {
+    width: 7em;
+    height: 7em;
+    border-radius: 50%;
+    background-color: lime;
+}
+
+.user-info-container {
+    margin: 1em 5%;
+    background-color: lime;
+    text-align: left;
+}
+
+.info-input {
+    margin-bottom: 1em;
+}
