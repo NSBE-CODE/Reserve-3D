@@ -25,7 +25,7 @@ const Landing = (props) => {
             </div>
 
             <div className="time-selection-container">
-                <h1>THIS IS THE TIME SELECTION COMPONENT</h1>
+                <h1>THIS IS THE TIME TIME SELECTION COMPONENT</h1>
             </div>
         </div>
     )
