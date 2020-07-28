@@ -39,7 +39,7 @@ button::-moz-focus-inner {
 
 .about-feature-image-container {
     width: 100%;
-    background-image: url('../../assets/about/about-feature-image.jpg');
+    background-image: url('../../assets/about-feature-image.jpg');
     background-size: cover;
     background-position: center;
     min-height: 300px;
@@ -84,7 +84,7 @@ button::-moz-focus-inner {
 }
 
 .professor-information__profile-icon {
-    background-image: url('../../assets/about/profile-icon.jpg');
+    background-image: url('../../assets/profile-icon.jpg');
     background-size: cover;
     height: 10vw;
     border-radius: 50%;
@@ -98,7 +98,7 @@ button::-moz-focus-inner {
 }
 
 .peer-mentor-information__profile-icon {
-    background-image: url('../../assets/about/ta-icon.jpg');
+    background-image: url('../../assets/ta-icon.jpg');
     background-size: cover;
     background-color: #DDE2E8;
     margin-left: 3vw;

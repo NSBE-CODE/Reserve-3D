@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './styles/discipActions.css';
 
 
 const DiscipActions = (props) => {
