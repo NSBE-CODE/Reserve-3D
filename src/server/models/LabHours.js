@@ -20,14 +20,15 @@ CRUD
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+//Schema
 var LabHoursSchema = new Schema({
-    Date: Date,
-    Open: Boolean,
+    Date: {type: Date, required: true},
+    Open: {type: Boolean, default: false},
     Hours: {
-        Hour: Number,
-        Available: Boolean,
-        LargePrintersAvailable: Number,
-        MediumPrintersAvailable: Number,
+        Hour: {type: Number, required: true},
+        Available: {type: Boolean, default: false},
+        LargePrintersAvailable: {type: Number, default: 0},
+        MediumPrintersAvailable: {type: Number, default: 0},
     },
 });
 
@@ -55,8 +56,8 @@ LabHoursSchema.statics = {
             Date: {$gte: begin, $lte: end}
         })
         .exec()
-        .then((labHour)=>{
-            res.json(labHour);
+        .then((labHours)=>{
+            res.json(labHours);
         })
         .catch((err)=>{
             console.log('Error occured: ' + err);  
@@ -76,8 +77,8 @@ LabHoursSchema.statics = {
     //DELETE
     delete: function(req,res) {
         this.deleteOne({Date: req.body.Date})
-        .then((labHour)=>{
-            res.json(labHour);
+        .then((deletionInfo)=>{
+            res.json(deletionInfo);
         })
         .catch((err)=>{
             console.log('Error occured: ' + err);  
@@ -86,8 +87,12 @@ LabHoursSchema.statics = {
     //PUT
     put: function(req,res) {
         this.findOneAndUpdate({
-            Date: req.body.Date
+            Date: req.body.Date // Filter
         },
+        {//What we are updating
+            Open: req.body.Open,
+            Hours: req.body.Hours,
+        },{new: true}
         )
         .exec()
         .then((labHour)=>{
@@ -98,8 +103,6 @@ LabHoursSchema.statics = {
         });
     }, 
 };
-
-
 
 
 var LabHours = mongoose.model('LabHours', LabHoursSchema);
