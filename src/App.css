@@ -4,12 +4,18 @@
 }
 
 .App {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   font-family: Quando;
+  background-color: #F1F1F1;
+  min-height: 100vh;
+  align-content: space-between;
 }
 
+
 .spacer {
-  height: 113px;
+  height: 113px;  
   width: 100%;
 }
 
@@ -22,4 +28,21 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+button {
+  border: none;
+  outline: none;
+  font-family: Quando;
+  font-size: 18px;
+  background-color: #E0812E;
+  color: white;
+}
+
+button:hover {
+  filter: brightness(125%);
+}
+
+button::-moz-focus-inner {
+  border: 0;
 }

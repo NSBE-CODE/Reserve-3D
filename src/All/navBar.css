@@ -1,7 +1,8 @@
 .header {
+    z-index: 99;
     position: fixed;
     display: grid;
-    grid-template-columns: 113px auto 82px;
+    grid-template-columns: 113px auto auto;
     grid-template-rows: 67px 5px 41px;
     height: 113px;
     width: 100%;
@@ -11,12 +12,11 @@
 .header #logo { 
     grid-column: 1;
     grid-row: 1/4; 
-    height: 113px;
-    width: 113px;
+    max-height: 113px;
 }
 
 .header #title { 
-    padding: 15px 15px;
+    margin: auto 1%;
     text-align: left;
     grid-column: 2;
     grid-row: 1;
@@ -40,6 +40,8 @@
 }
 
 .header #list { 
+    display: flex;
+
     grid-column: 2/4;
     grid-row: 3; 
     width: 100%;
@@ -47,13 +49,13 @@
 }
 
 .nav-link {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     width: 33.33%;
-    height: 31px;
     text-decoration: none;
-    font-size: 18px;
     color: black;
-    padding-top: 10px;
+    height: 100%;
+    justify-content: center;
 }
 
 .nav-link:hover{
@@ -63,24 +65,29 @@
 /* ===== DROP DOWN MENU ===== */
   
 .drop-down-menu__container {
-    display: inline-block;  
+    display: flex;  
+}
+
+.drop-down-menu__icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.drop-down-menu__icon-container:hover {
+    background-color: #00438A;
 }
 
 .drop-down-menu__container #profile-icon {
     font-size: 38px;
     color: #FFFFFF;
     border-radius: 50%;
-    margin-top: 10px;
-    padding: 4px;
-}
-
-.drop-down-menu__container #profile-icon:hover {
-    background-color: #00438A;
 }
 
 .drop-down-menu__container #expand-more-icon {
     color: #FFFFFF;
-    margin-bottom: 9px;
 }
   
 .drop-down-menu {
@@ -88,16 +95,20 @@
     top: 62px;
     right: 15px;
     position: absolute;
-    background-color: #00438A;
+    background-color: white;
     z-index: 1;
     width: 230px;
     border-radius: 5px;
-    border-style: solid;
-    border-color: #476F93;
+    box-shadow:     0      10px      10px       #666;
+    /*              |        |         |
+                x-shift      |         |
+                          y-shift      |
+                                 size of shadow
+    */
 }
 
 .drop-down-menu a {
-    color: #FFFFFF;
+    color: #636363;
     padding: 8px 13px;
     margin: 8px 5px;
     text-decoration: none;
@@ -139,13 +150,13 @@
 
 .drop-down-menu hr {
     width: 90%;
-    border:  .5px solid #2868A1;
+    border:  .5px solid #636363;
 }
 
 .drop-down-menu #item-sign-out {
-    background-color: #1D5FA0;
+    background-color: #ECECEC;
 }
   
 .drop-down-menu a:hover {
-    background-color: #054F97;
+    background-color: #ECECEC;
 }
