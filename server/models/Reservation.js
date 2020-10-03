@@ -2,35 +2,12 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ReservationSchema = new Schema({
-  Date: {
-    type: Date,
-    required: true,
-  },
-
-  Reserver_id: {
-    type: String,
-    unique: true,
-    required: true,
-  },
-
-  Reserver_name: {
-    type: String,
-    required: true,
-  },
-
-  Printer_used: {
-    type: String,
-    required: true,
-  },
-
-  Duration: {
-    type: Number,
-    required: true,
-  },
-  Comments: {
-    type: String,
-    required: true,
-  }
+  date: { type: String, required: true },
+  Reserver_id: { type: String, unique: true, required: false },
+  reserver_name: { type: String, required: true },
+  printer_used: { type: String, required: true },
+  duration: { type: Number, required: true },
+  comments: { type: String }
 });
 
 ReservationSchema.statics = {
@@ -75,40 +52,50 @@ ReservationSchema.statics = {
 
   //GET  (single entry by reserver_id)
   getByName: function(req, res) {
-    this.findOne({
-      Name: req.body.Reserver_id
+    console.log('I got called');
+    var model = ReservationSchema;
+
+    mongoose.model('Reservation').findOne({
+      Reserver_id: req.body.Reserver_id
     })
-    .exec().then((reservation) => {
-      res.json(reservation)
-    })
-    .catch((err) => {
-      console.log('Error: ' + err);
+    .then((reservation, err) => {
+      if(err) {
+        res.send(err);
+      } else {
+        res.send(reservation);
+      }
     });
   },
 
   // GET (multiple entries by date)
   get: function(req, res) {
-    this.find({Date: req.body.Date})
-    .then((reservation) => {
-      res.json(reservation);
+    var model = ReservationSchema;
+
+    mongoose.model('Reservation').find({Date: req.body.Date})
+    .then((reservation, err) => {
+      res.send(reservation);
     })
     .catch((err) => {
       console.log('Error: ' + err);
     });
   },
+
 
   // GET (all entries)
-  get: function(req, res) {
-    this.find({})
-    .then((reservation) => {
-      res.json(reservation);
+  getAll: function(req, res) {
+    var model = ReservationSchema;
+    console.log('No, I got called');
+    mongoose.model('Reservation').find().then(function(docs, err){
+      if(err){
+        res.send(err);
+      } else { 
+        res.send(docs);
+      }
     })
-    .catch((err) => {
-      console.log('Error: ' + err);
-    });
   },
+
 };
 
-
 var Reservation = mongoose.model('Reservation', ReservationSchema);
+
 module.exports = Reservation;
