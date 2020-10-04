@@ -2,34 +2,35 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ReservationSchema = new Schema({
-  Date: {
+  date: {
     type: Date,
     required: true,
   },
 
-  Reserver_id: {
+  reserver_id: {
     type: String,
     unique: true,
     required: true,
   },
 
-  Reserver_name: {
+  reserver_name: {
     type: String,
     required: true,
   },
 
-  Printer_used: {
+  printer_used: {
     type: String,
     required: true,
   },
 
-  Duration: {
+  duration: {
     type: Number,
     required: true,
   },
-  Comments: {
+
+  comments: {
     type: String,
-    required: true,
+    required: false,
   }
 });
 
@@ -44,21 +45,7 @@ ReservationSchema.statics = {
     .catch((err)=>{
         console.log('Error occured: ' + err);  
     });
-},
-
-  //PUT
-  put: function(req, res) {
-    this.findById({
-      _id: req.params.id
-    },
-  )
-  .exec().then((reservation) =>{
-    res.json(reservation);
-  })
-  .catch((err) => {
-    console.log('Error: ' + err);
-  });
-},
+  },
 
   // DELETE
   delete: function(req, res) {
@@ -73,8 +60,8 @@ ReservationSchema.statics = {
     });
   },
 
-  //GET  (single entry by reserver_id)
-  getByName: function(req, res) {
+  //GET  (multiple entries by reserver_id)
+  getById: function(req, res) {
     this.findOne({
       Name: req.body.Reserver_id
     })
@@ -87,7 +74,7 @@ ReservationSchema.statics = {
   },
 
   // GET (multiple entries by date)
-  get: function(req, res) {
+  getByDate: function(req, res) {
     this.find({Date: req.body.Date})
     .then((reservation) => {
       res.json(reservation);
@@ -98,7 +85,7 @@ ReservationSchema.statics = {
   },
 
   // GET (all entries)
-  get: function(req, res) {
+  getAll: function(req, res) {
     this.find({})
     .then((reservation) => {
       res.json(reservation);

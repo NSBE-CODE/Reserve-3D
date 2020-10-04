@@ -2,11 +2,11 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var FAQSchema = new Schema({
-  Question: {
+  question: {
     type: String,
     required: true,
   },
-  Answer: {
+  answer: {
     type: String,
     required: true,
   }
@@ -26,7 +26,7 @@ FAQSchema.statics = {
     });
   },
 
-  //PUT
+  //PUT (by _id)
   put: function(req, res) {
     this.findById({
       _id: req.params.id
@@ -40,7 +40,7 @@ FAQSchema.statics = {
   });
 },
 
-  // DELETE
+  // DELETE (by _id)
   delete: function(req, res) {
     this.deleteOne({
       Name: req.body.Name
@@ -53,21 +53,8 @@ FAQSchema.statics = {
     });
   },
 
-  //GET (single entry)
-  getByName: function(req, res) {
-    this.findOne({
-      Name: req.body.Name
-    })
-    .exec().then((faq) => {
-      res.json(faq)
-    })
-    .catch((err) => {
-      console.log('Error: ' + err);
-    });
-  },
-
   // GET (all entries)
-  get: function(req, res) {
+  getAll: function(req, res) {
     this.find({})
     .then((faq) => {
       res.json(faq);
