@@ -10,6 +10,7 @@ a:active {
 /* ===== Profile Card ===== */
 
 .student-profile {
+    width: calc(100vw - 30px);
     flex-grow: 2;
     background-color: #F1F1F1;
     text-align: left;
@@ -28,7 +29,9 @@ a:active {
 
 @media (max-width: 1250px) {
     .side-nav-bar {
-        width: auto !important;
+        padding: 0 1%;
+        min-width: 30px;
+        width: 30px !important;
     }
 
     .um {
@@ -107,11 +110,9 @@ input {
     padding: 2% 5%;
     box-sizing: border-box;
     margin: auto;
-    font-size: 14px;
 }
 
 .confirm {
-    font-size: .75rem;
     padding: .5rem 1rem;
     margin-left: 25%;
 }
@@ -127,14 +128,12 @@ input {
     margin: 2em 5%;
 }
 
-.lab-history-title {
-    font-size: 18px;
-    padding: 8px 0;
-}
+
 
 /* ===== Admin Specific Styles ===== */
 
 .admin-profile {
+    font-size: 14px;
     text-align: left;
     flex: auto;
     flex-direction: row;
@@ -170,17 +169,29 @@ input {
     font-weight: bold;
 }
 
+#side-nav-bar-icon-container {
+    color: inherit;
+    vertical-align: top;
+}
+
+.MuiSvgIcon-root {
+    vertical-align: top;
+}
+
 .selected {
-    text-decoration: underline;
     font-weight: bold;
-    color: #E0812E;
+    color: #16446D !important;
+}
+
+.selected::before {
+    padding-top: 1px;
+    content: "|";
 }
 
 select {
     border: none !important;
     background-color: transparent;
     font-family: Quando;
-    font-size: 16px;
 }
 
 .notif-column {
@@ -216,7 +227,6 @@ select {
 .profile-search-bar {
     border: none;
     font-family: Quando;
-    font-size: 16px;
     padding: .5rem;
     width: 50%;
 }
@@ -228,7 +238,6 @@ select {
 .profile-confirm-button {
     box-sizing: border-box;
     padding: .5rem 1rem;
-    font-size: 16px;
 }
 
 /* ===== Table ===== */
@@ -237,9 +246,19 @@ select {
     width: 100%;
 }
 
+#profile-card-table td {
+    padding: .5rem 0;
+}
+
 .profile-page-container {
-    margin: 0 2%;
-    flex-grow: 2;
+    box-sizing: border-box;
+    padding: 0 2%;
+    overflow: hidden;
+    width: calc(100vw - 30px);
+}
+
+.table-container {
+    overflow-x: scroll;
 }
 
 #customers tr::before {
@@ -289,6 +308,7 @@ select {
 }
 
 #customers {
+    overflow-x: scroll;
     border-collapse: collapse;
     width: 100%;
 }
@@ -299,9 +319,7 @@ select {
 }
 
 #customers td {
-    max-width: 10em;
     overflow-x: scroll;
-    padding: 0 .5rem;
     overflow-wrap: anywhere;
     white-space: nowrap;
 }

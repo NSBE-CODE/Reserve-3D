@@ -8,7 +8,6 @@ import ProfileCard from './components/ProfileCard.js';
 
 import NotFound from '../All/NotFound.js';
 
-
 import LabHistory from './LabHistory.js';
 import Upcoming from './Upcoming.js'
 import EditPersonnel from './EditPersonnel.js';
@@ -16,8 +15,8 @@ import ManagePrinters from './ManagePrinters.js';
 import DiscipActions from './DiscipActions.js';
 import ConfigureLabHours from './ConfigLabHours.js';
 import EditGallery from './EditGallery.js';
-import { HomeRounded, Update, History, PermContactCalenderRounded, Print, EventNote, RemoveCircle, PhotoLibrary } from '@material-ui/icons';
-import PermContactCalendarRounded from '@material-ui/icons/PermContactCalendarRounded';
+import { HomeRounded, Update, History, Print, EventNote, RemoveCircle, PhotoLibrary } from '@material-ui/icons';
+import PermContactCalendarIcon from '@material-ui/icons/PermContactCalendar';
 
 const pages = [
     'upcoming',
@@ -58,35 +57,35 @@ const AdminProfile = (props) => {
 
             <div className="side-nav-bar" style={{width: navBarWidth}}>
                 <div className="side-nav-bar-item home">
-                    <a href="/admin-profile/home"><HomeRounded/></a>
+                    <a href="/admin-profile/home" id="side-nav-bar-icon-container"><HomeRounded/></a>
                     <Link to="/admin-profile/home" className="um side-nav-bar-item">Profile</Link>
                 </div>
                 <div className="side-nav-bar-item upcoming">
-                    <Update/>
+                    <a href="/admin-profile/upcoming" id="side-nav-bar-icon-container"><Update/></a>
                     <Link to="/admin-profile/upcoming" className="um side-nav-bar-item">Upcoming</Link>
                 </div>
                 <div className="side-nav-bar-item lab-history">
-                    <History/>
+                    <a href="/admin-profile/lab-history" id="side-nav-bar-icon-container"><History/></a>
                     <Link to="/admin-profile/lab-history" className="um side-nav-bar-item">Lab History</Link>
                 </div>
                 <div className="side-nav-bar-item edit-personnel">
-
+                    <Link to="/admin-profile/edit-personnel" id="side-nav-bar-icon-container"><PermContactCalendarIcon/></Link>
                     <Link to="/admin-profile/edit-personnel" className="um side-nav-bar-item">Edit Personnel</Link>
                 </div>
                 <div className="side-nav-bar-item manage-printers">
-                    <Print/>
+                    <a href="/admin-profile/manage-printers" id="side-nav-bar-icon-container"><Print/></a>
                     <Link to="/admin-profile/manage-printers" className="um side-nav-bar-item">Manage Printers</Link>
                 </div>
                 <div className="side-nav-bar-item configure-lab-hours">
-                    <EventNote/>
+                    <a href="/admin-profile/configure-lab-hours" id="side-nav-bar-icon-container"><EventNote/></a>
                     <Link to="/admin-profile/configure-lab-hours" className="um side-nav-bar-item">Configure Lab Hours</Link>
                 </div>
                 <div className="side-nav-bar-item disciplinary-actions">
-                    <RemoveCircle/>
+                    <a href="/admin-profile/disciplinary-actions" id="side-nav-bar-icon-container"><RemoveCircle/></a>
                     <Link to="/admin-profile/disciplinary-actions" className="um side-nav-bar-item">Disciplinary Action</Link>
                 </div>
                 <div className="side-nav-bar-item edit-gallery">
-                    <PhotoLibrary/>
+                    <a href="/admin-profile/edit-gallery" id="side-nav-bar-icon-container"><PhotoLibrary/></a>
                     <Link to="/admin-profile/edit-gallery" className="um side-nav-bar-item">Edit Gallery</Link>
                 </div>
             </div> 
