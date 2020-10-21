@@ -28,8 +28,7 @@ FAQSchema.statics = {
 
   //PUT (by _id)
   put: function(req, res) {
-    mongoose.model('FAQ').findOneAndUpdate({answer: req.params.answer}, 
-      req.body)
+    mongoose.model('FAQ').findOneAndUpdate({_id: req.body._id}, req.body)
   .then((faq) =>{
     res.json(faq);
   })
