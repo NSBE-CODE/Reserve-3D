@@ -17,7 +17,7 @@ FAQSchema.statics = {
   // POST
   post: function(req, res) {
     var faq = req.body;
-    this.create(faq)
+    mongoose.model('FAQ').create(faq)
     .then((faq) => {
       res.json(faq);
     })
@@ -28,11 +28,9 @@ FAQSchema.statics = {
 
   //PUT (by _id)
   put: function(req, res) {
-    this.findById({
-      _id: req.params.id
-    },
-  )
-  .exec().then((faq) =>{
+    mongoose.model('FAQ').findOneAndUpdate({answer: req.params.answer}, 
+      req.body)
+  .then((faq) =>{
     res.json(faq);
   })
   .catch((err) => {
@@ -40,11 +38,9 @@ FAQSchema.statics = {
   });
 },
 
-  // DELETE (by _id)
+  // DELETE (all)
   delete: function(req, res) {
-    this.deleteOne({
-      Name: req.body.Name
-    })
+    mongoose.model('FAQ').deleteMany()
     .then((faq) => {
       res.json(faq);
     })
@@ -52,10 +48,11 @@ FAQSchema.statics = {
       console.log('Error: ' + err);
     });
   },
+  
 
   // GET (all entries)
   getAll: function(req, res) {
-    this.find({})
+    mongoose.model('FAQ').find({})
     .then((faq) => {
       res.json(faq);
     })

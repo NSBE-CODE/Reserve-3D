@@ -34,24 +34,25 @@ var ReservationSchema = new Schema({
   }
 });
 
+
 ReservationSchema.statics = {
   // POST
   post: function(req,res) {
     var reservation = req.body;
-    this.create()
+    mongoose.model('Reservation').create(reservation)
     .then((reservation)=>{
         res.json(reservation);
     })
+    
     .catch((err)=>{
         console.log('Error occured: ' + err);  
     });
+
   },
 
   // DELETE
   delete: function(req, res) {
-    this.deleteOne({
-      Name: req.body.Name
-    })
+    mongoose.model('Reservation').deleteMany()
     .then((reservation) => {
       res.json(reservation);
     })
@@ -62,9 +63,7 @@ ReservationSchema.statics = {
 
   //GET  (multiple entries by reserver_id)
   getById: function(req, res) {
-    this.findOne({
-      Name: req.body.Reserver_id
-    })
+    mongoose.model('Reservation').find({reserver_id: req.body.reserver_id})
     .exec().then((reservation) => {
       res.json(reservation)
     })
@@ -75,7 +74,7 @@ ReservationSchema.statics = {
 
   // GET (multiple entries by date)
   getByDate: function(req, res) {
-    this.find({Date: req.body.Date})
+    mongoose.model('Reservation').find({date: req.body.date})
     .then((reservation) => {
       res.json(reservation);
     })
@@ -86,7 +85,7 @@ ReservationSchema.statics = {
 
   // GET (all entries)
   getAll: function(req, res) {
-    this.find({})
+    mongoose.model('Reservation').find({})
     .then((reservation) => {
       res.json(reservation);
     })
