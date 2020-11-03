@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './styles/adminProfileView.css';
 
 
 const AdminProfileView = (props) => {
