@@ -89,3 +89,4 @@ GallerySchema.statics = {
 };
 
 module.exports = mongoose.model("Gallery", GallerySchema);
+
