@@ -6,7 +6,7 @@ import useWindowDimensions from './useWindowDimensions.js';
 import 'semantic-ui-css/semantic.min.css';
 import { Grid, Image } from 'semantic-ui-react';
 import ReservationTime from './ReservationTime.js';
-const ReservationSys = (props) => {
+const ReservationWeek = (props) => {
     let subClicked = props.submitClicked;
     const { height, width } = useWindowDimensions();
     const times = [
@@ -117,31 +117,4 @@ const timeSelector = times.map((block) => {
     )
 }
 
-export default ReservationSys;
-/* 
- <h1>THIS IS THE TIME SELECTION COMPONENT</h1>
-                <h2>Monday</h2>
-                <div className = "block-row">
-                    <Grid >{timeSelector}</Grid>
-                </div>
-                <h2>Tuesday</h2>
-                <div className = "block-row">
-                    <Grid >{timeSelector}</Grid>
-                </div>
-                <h2>Wednesday</h2>
-                <div className = "block-row">
-                    <Grid >{timeSelector}</Grid>
-                </div>
-                <h2>Thursday</h2>
-                <div className = "block-row">
-                    <Grid >{timeSelector}</Grid>
-                </div>
-                <h2>Friday</h2>
-                <div className = "block-row">
-                    <Grid >{timeSelector}</Grid>
-                </div>
-
-
-
-
-*/
+export default ReservationWeek;

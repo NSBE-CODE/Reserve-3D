@@ -1,0 +1,11 @@
+.time-selection-container {
+    font-family: Quando;
+    background-color: #F1F1F1;
+    margin-left: 100;
+    display: "flex"; 
+    flex-Direction: column; 
+    
+}
+.quando{
+    font-family: Quando;
+}

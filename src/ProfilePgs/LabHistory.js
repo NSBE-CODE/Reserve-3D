@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './styles/labHistory.css';
+import './styles/LabHistory.css';
 
 
 const LabHistory = (props) => {
