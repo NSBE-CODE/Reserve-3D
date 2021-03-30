@@ -23,7 +23,7 @@ var PrinterSchema = new Schema({
     required: true,
     enum: ['large', 'medium', 'small'],
   },
-
+  
 });
 
 //CRUD
@@ -31,7 +31,7 @@ PrinterSchema.statics = {
   // POST (get from _id)
   post: function(req, res) {
     var printer = req.body;
-    this.create(printer)
+    mongoose.model('Printer').create(printer)
     .then((printer) => {
       res.json(printer);
     })
@@ -42,11 +42,8 @@ PrinterSchema.statics = {
 
   //PUT
   put: function(req, res) {
-    this.findById({
-      _id: req.params.id
-    },
-  )
-  .exec().then((printer) =>{
+    mongoose.model('Printer').findOneAndUpdate({_id: req.body._id}, req.body)
+  .then((printer) =>{
     res.json(printer);
   })
   .catch((err) => {
@@ -56,8 +53,8 @@ PrinterSchema.statics = {
 
   // DELETE
   delete: function(req, res) {
-    this.deleteOne({
-      Name: req.body.Name
+    mongoose.model('Printer').deleteOne({
+      name: req.body.name
     })
     .then((printer) => {
       res.json(printer);
@@ -69,8 +66,8 @@ PrinterSchema.statics = {
 
   //GET (single entry)
   getById: function(req, res) {
-    this.findOne({
-      Name: req.body.Name
+    mongoose.model('Printer').findOne({
+      _id: req.body._id
     })
     .exec().then((printer) => {
       res.json(printer)
@@ -82,7 +79,7 @@ PrinterSchema.statics = {
 
   // GET (all entries)
   getAll: function(req, res) {
-    this.find({})
+    mongoose.model('Printer').find({})
     .then((printer) => {
       res.json(printer);
     })
